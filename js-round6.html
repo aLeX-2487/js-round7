@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>js-round6</title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0,user-scalable=no,initial-scale=1" />
+
+    <link href="general.css" rel="stylesheet" type="text/css">
+    <link href="reset.css" rel="stylesheet" type="text/css">
+    <link href="js-round6.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+
+</head>
+
+<body ng-app="ngRouteExample">
+<header>
+    <p><a href="./index.html#/Welcome">萝卜多后台管理系统</a></p>
+    <div class="fr login">
+        <span>超级管理员</span>
+        <img src="./u19.png"><span class="admin">admin</span>
+        <span><a style="cursor: pointer">退出</a></span>
+    </div>
+</header>
+<div class="sidebar">
+    <ul >
+        <li ><img src="./u47.png"><span>信息管理</span><span><</span> </li>
+        <li ><img src="./u47.png"><span>Acticle管理</span><span><</span> </li>
+        <a ui-sref="article" class="article">Article列表</a>
+        <script>
+            $(document).ready(function(){
+                $("li").eq(1).click(function(){
+                    if($(".article").is(":hidden")) {$(".article").show() }
+                    else  $(".article").hide()
+                })
+                $("header span a").click(function(){
+                    var warning=confirm("你确定要退出登录，并返回登录页面吗？");
+                    if(warning){
+                        location.href ="./js-round6.0.html";
+                    }
+                })
+            })
+        </script>
+
+        <li ><img src="./u47.png"><span>人才管理</span><span><</span> </li>
+        <li ><img src="./u47.png"><span>推荐管理</span><span><</span> </li>
+        <li ><img src="./u47.png"><span>后台管理</span><span><</span> </li>
+        <li ><img src="./u47.png"><span>用户管理</span><span><</span> </li>
+        <li ><img src="./u47.png"><span>内容管理</span><span><</span> </li>
+    </ul>
+</div>
+<div class="main" ui-view></div>
+
+
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript"  src="angular-ui-router.js"></script>
+<script type="text/javascript"  src="app.js"></script>
+<!--<script type="text/javascript"  src="js-round6.js"></script>-->
+</body>
+
+
+
+</html>
